@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite errors="0" failures="4" name="io.cucumber.core.plugin.JUnitFormatter" skipped="0" tests="15" time="233.086">
+<testcase classname="F01_Register | users could register with new accounts" name="guest user could register with valid data successfully" time="17.095">
+<system-out><![CDATA[And user go to register page................................................passed
+When select gender type.....................................................passed
+And user enter first name "automation" and last name "tester"...............passed
+And user enter date of birth................................................passed
+And user enter email "test@example.com" field...............................passed
+And user fills Password fields "P@ssw0rd" "P@ssw0rd"........................passed
+And user confirm the password...............................................passed
+And user clicks on register button..........................................passed
+Then success message is displayed...........................................passed
+]]></system-out>
+</testcase>
+<testcase classname=": F02_Login | users could use login functionality to use their accounts" name="user could login with valid email and password" time="12.201">
+<system-out><![CDATA[Given user go to login page.................................................passed
+When user login with "valid" "test@example.com" and "P@ssw0rd"..............passed
+And user press on login button..............................................passed
+Then user login to the system successfully..................................passed
+]]></system-out>
+</testcase>
+<testcase classname=": F02_Login | users could use login functionality to use their accounts" name="user could login with invalid email and password" time="29.973">
+<failure message="no such element: Unable to locate element: {&quot;method&quot;:&quot;css selector&quot;,&quot;selector&quot;:&quot;div[class=&quot;message-error validation-summary-errors&quot;]&quot;}&#10;  (Session info: chrome=109.0.5414.76)&#10;For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element&#10;Build info: version: '4.7.1', revision: 'c6795baf1a3'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [4e519705bc38477bbe0694463e0b5d5a, findElement {using=css selector, value=div[class=&quot;message-error validation-summary-errors&quot;]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.76, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\elgohary\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55304}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55304/devtoo..., se:cdpVersion: 109.0.5414.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 4e519705bc38477bbe0694463e0b5d5a" type="org.openqa.selenium.NoSuchElementException"><![CDATA[Given user go to login page.................................................passed
+When user login with "invalid" "wrong@example.com" and "P@ssw0rd"...........passed
+And user press TO login button..............................................passed
+Then user could not login to the system.....................................failed
+
+StackTrace:
+org.openqa.selenium.NoSuchElementException: no such element: Unable to locate element: {"method":"css selector","selector":"div[class="message-error validation-summary-errors"]"}
+  (Session info: chrome=109.0.5414.76)
+For documentation on this error, please visit: https://selenium.dev/exceptions/#no_such_element
+Build info: version: '4.7.1', revision: 'c6795baf1a3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [4e519705bc38477bbe0694463e0b5d5a, findElement {using=css selector, value=div[class="message-error validation-summary-errors"]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.76, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\elgohary\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55304}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55304/devtoo..., se:cdpVersion: 109.0.5414.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 4e519705bc38477bbe0694463e0b5d5a
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
+	at org.openqa.selenium.remote.ElementLocation$ElementFinder$2.findElement(ElementLocation.java:162)
+	at org.openqa.selenium.remote.ElementLocation.findElement(ElementLocation.java:60)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:367)
+	at org.openqa.selenium.remote.RemoteWebDriver.findElement(RemoteWebDriver.java:359)
+	at org.example.stepDefinition.TC02_loginStepDef.unsuccessful_login(TC02_loginStepDef.java:60)
+	at ✽.user could not login to the system(file:///C:/Users/elgohary/IdeaProjects/final_project/src/main/resources/features/F02_Login.feature:13)
+]]></failure>
+</testcase>
+<testcase classname="Currency change within the website" name="_2" time="12.622">
+<system-out><![CDATA[Given Select Euro currency from the dropdown list on the top left of home page.passed
+Then Verify that the currency has been successfully changed.................passed
+]]></system-out>
+</testcase>
+<testcase classname="user could search using product name" name="_2" time="14.465">
+<system-out><![CDATA[Given Write the word book inside the search place...........................passed
+Then Make sure that  pressure on the search button appears for the search URL.passed
+Then Count number of search results.........................................passed
+]]></system-out>
+</testcase>
+<testcase classname="user could search using product name" name="user could search using product SUK" time="14.407">
+<system-out><![CDATA[Given Write the word SUK inside the search place............................passed
+Then Click The search button in dynamic list drop...........................passed
+And Verify the product SUK inside the page..................................passed
+]]></system-out>
+</testcase>
+<testcase classname="User will use Actions class in Selenium framework to hover on computer category then click on sub" name="_2" time="11.397">
+<failure message="element not interactable: https://demo.nopcommerce.com/desktops has no size and location&#10;  (Session info: chrome=109.0.5414.76)&#10;Build info: version: '4.7.1', revision: 'c6795baf1a3'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [60f91e0cafa87e856c59a83ed3b25d49, actions {actions=[org.openqa.selenium.interactions.Sequence@3bf54172]}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.76, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\elgohary\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55420}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55420/devtoo..., se:cdpVersion: 109.0.5414.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Session ID: 60f91e0cafa87e856c59a83ed3b25d49" type="org.openqa.selenium.ElementNotInteractableException"><![CDATA[Given you need to select computer from main categories and hover it.........failed
+Then Assert that the sub-category title.....................................skipped
+
+StackTrace:
+org.openqa.selenium.ElementNotInteractableException: element not interactable: https://demo.nopcommerce.com/desktops has no size and location
+  (Session info: chrome=109.0.5414.76)
+Build info: version: '4.7.1', revision: 'c6795baf1a3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [60f91e0cafa87e856c59a83ed3b25d49, actions {actions=[org.openqa.selenium.interactions.Sequence@3bf54172]}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.76, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\elgohary\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55420}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55420/devtoo..., se:cdpVersion: 109.0.5414.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Session ID: 60f91e0cafa87e856c59a83ed3b25d49
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
+	at org.openqa.selenium.remote.RemoteWebDriver.perform(RemoteWebDriver.java:619)
+	at org.openqa.selenium.interactions.Actions$BuiltAction.perform(Actions.java:567)
+	at org.example.stepDefinition.TC05_hoverCategoriesStepDef.hover_main_categories(TC05_hoverCategoriesStepDef.java:26)
+	at ✽.you need to select computer from main categories and hover it(file:///C:/Users/elgohary/IdeaProjects/final_project/src/main/resources/features/F05_hoverCategories.feature:4)
+]]></failure>
+</testcase>
+<testcase classname="homeSliders Feature" name="_2" time="11.971">
+<system-out><![CDATA[Given click on first slider to direct user to this url......................passed
+Then verify to this url.....................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="homeSliders Feature" name="_3" time="10.04">
+<system-out><![CDATA[Given click on second slider to direct user to this url.....................passed
+Then verify to second url...................................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_followUs | users could open followUs links" name="user opens facebook link" time="20.074">
+<system-out><![CDATA[Given user opens facebook link..............................................passed
+Then www.facebook" is opened in new tab.....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_followUs | users could open followUs links" name="user opens twitter link" time="16.52">
+<system-out><![CDATA[Given user opens twitter link...............................................passed
+Then verify twitter is opened in new tab....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="F07_followUs | users could open followUs links" name="user opens rss link" time="16.108">
+<failure message="Index: 1, Size: 1" type="java.lang.IndexOutOfBoundsException"><![CDATA[Given user opens rss link...................................................passed
+Then verify rss is opened in new tab........................................failed
+
+StackTrace:
+java.lang.IndexOutOfBoundsException: Index: 1, Size: 1
+	at java.util.ArrayList.rangeCheck(ArrayList.java:659)
+	at java.util.ArrayList.get(ArrayList.java:435)
+	at org.example.stepDefinition.TC07_followUsStepDef.verify_opening_rss(TC07_followUsStepDef.java:66)
+	at ✽.verify rss is opened in new tab(file:///C:/Users/elgohary/IdeaProjects/final_project/src/main/resources/features/F07_followUs.feature:14)
+]]></failure>
+</testcase>
+<testcase classname="F07_followUs | users could open followUs links" name="user opens youtube link" time="22.564">
+<system-out><![CDATA[Given user opens youtube link...............................................passed
+Then verify youtube is opened in new tab....................................passed
+]]></system-out>
+</testcase>
+<testcase classname="WISHLIST" name="_2" time="11.087">
+<system-out><![CDATA[Given click on wishlist button ❤️ on this product "HTC One M8 Android L 5.0 Lollipop.passed
+Then verify success message and color is displayed..........................passed
+]]></system-out>
+</testcase>
+<testcase classname="WISHLIST" name="_3" time="11.935">
+<failure message="element click intercepted: Element &lt;span class=&quot;wishlist-qty&quot;&gt;...&lt;/span&gt; is not clickable at point (993, 22). Other element would receive the click: &lt;p class=&quot;content&quot;&gt;...&lt;/p&gt;&#10;  (Session info: chrome=109.0.5414.76)&#10;Build info: version: '4.7.1', revision: 'c6795baf1a3'&#10;System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'&#10;Driver info: org.openqa.selenium.chrome.ChromeDriver&#10;Command: [0c8ed784ea655c20f4a50f93eb47f6f5, clickElement {id=f3eed599-8665-4210-8e6b-412b9cdd90e7}]&#10;Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.76, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\elgohary\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55676}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55676/devtoo..., se:cdpVersion: 109.0.5414.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}&#10;Element: [[ChromeDriver: chrome on WINDOWS (0c8ed784ea655c20f4a50f93eb47f6f5)] -&gt; css selector: span[class=&quot;wishlist-qty&quot;]]&#10;Session ID: 0c8ed784ea655c20f4a50f93eb47f6f5" type="org.openqa.selenium.ElementClickInterceptedException"><![CDATA[Given click on wishlist button this product "HTC One M8 Android L 5.0 Lollipop.failed
+
+StackTrace:
+org.openqa.selenium.ElementClickInterceptedException: element click intercepted: Element <span class="wishlist-qty">...</span> is not clickable at point (993, 22). Other element would receive the click: <p class="content">...</p>
+  (Session info: chrome=109.0.5414.76)
+Build info: version: '4.7.1', revision: 'c6795baf1a3'
+System info: os.name: 'Windows 10', os.arch: 'amd64', os.version: '10.0', java.version: '1.8.0_351'
+Driver info: org.openqa.selenium.chrome.ChromeDriver
+Command: [0c8ed784ea655c20f4a50f93eb47f6f5, clickElement {id=f3eed599-8665-4210-8e6b-412b9cdd90e7}]
+Capabilities {acceptInsecureCerts: false, browserName: chrome, browserVersion: 109.0.5414.76, chrome: {chromedriverVersion: 109.0.5414.74 (e7c5703604da..., userDataDir: C:\Users\elgohary\AppData\L...}, goog:chromeOptions: {debuggerAddress: localhost:55676}, networkConnectionEnabled: false, pageLoadStrategy: normal, platformName: WINDOWS, proxy: Proxy(), se:cdp: ws://localhost:55676/devtoo..., se:cdpVersion: 109.0.5414.76, setWindowRect: true, strictFileInteractability: false, timeouts: {implicit: 0, pageLoad: 300000, script: 30000}, unhandledPromptBehavior: dismiss and notify, webauthn:extension:credBlob: true, webauthn:extension:largeBlob: true, webauthn:virtualAuthenticators: true}
+Element: [[ChromeDriver: chrome on WINDOWS (0c8ed784ea655c20f4a50f93eb47f6f5)] -> css selector: span[class="wishlist-qty"]]
+Session ID: 0c8ed784ea655c20f4a50f93eb47f6f5
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62)
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.createException(W3CHttpResponseCodec.java:200)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:133)
+	at org.openqa.selenium.remote.codec.w3c.W3CHttpResponseCodec.decode(W3CHttpResponseCodec.java:53)
+	at org.openqa.selenium.remote.HttpCommandExecutor.execute(HttpCommandExecutor.java:184)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.invokeExecute(DriverCommandExecutor.java:167)
+	at org.openqa.selenium.remote.service.DriverCommandExecutor.execute(DriverCommandExecutor.java:142)
+	at org.openqa.selenium.remote.RemoteWebDriver.execute(RemoteWebDriver.java:551)
+	at org.openqa.selenium.remote.RemoteWebElement.execute(RemoteWebElement.java:257)
+	at org.openqa.selenium.remote.RemoteWebElement.click(RemoteWebElement.java:78)
+	at org.example.stepDefinition.TC08_WishlistStepDef.CLICK(TC08_WishlistStepDef.java:48)
+	at ✽.click on wishlist button this product "HTC One M8 Android L 5.0 Lollipop(file:///C:/Users/elgohary/IdeaProjects/final_project/src/main/resources/features/F08_Wishlist.feature:7)
+]]></failure>
+</testcase>
+</testsuite>
